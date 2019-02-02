@@ -1,10 +1,7 @@
 import React from 'react';
-import { Container, Row, Col, Card, CardHeader, CardBody, CardTitle, CardText, CardImg } from 'reactstrap';
+import { Container, Row, Col, Card, CardBody, CardTitle, CardText, CardImg } from 'reactstrap';
 
 class ImagesList extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (

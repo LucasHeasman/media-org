@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Card, CardHeader, CardBody, CardText } from 'reactstrap';
+import { Container, Card, CardHeader, CardBody, ButtonGroup, Button } from 'reactstrap';
 import Sidebar from "react-sidebar";
 
 const mql = window.matchMedia(`(min-width: 800px)`);
@@ -79,7 +79,7 @@ class SidebarComponent extends React.Component {
         sidebar={
           <div className="sidebarContainer">
             {(this.state.sidebarOpen) ?
-              <a className="sidebarBtn sidebarBtnOpen" onClick={this.sidebarToggle}>X</a>
+              <a className="sidebarBtn sidebarBtnOpen" href="#/" onClick={this.sidebarToggle}>X</a>
             :
               ''
             }
@@ -105,9 +105,15 @@ class SidebarComponent extends React.Component {
         defaultSidebarWidth={250}
         styles={sidebarStyle}
       >
-        <Container>
+        <Container fluid={true}>
+          <div className="toolbar">
+            <ButtonGroup>
+                <Button className="toggleSidebar" onClick={this.sidebarToggle}>Toggle Sidebar</Button>
+                <Button className="toggleSidebar" onClick={this.props.addHandler}>Add</Button>
+              </ButtonGroup>
+          </div>
           {(!this.state.sidebarOpen) ?
-            <a className="sidebarBtn sidebarBtnClosed" onClick={this.sidebarToggle}>X</a>
+            <a className="sidebarBtn sidebarBtnClosed" href="#/" onClick={this.sidebarToggle}>X</a>
           :
             ''
           }
